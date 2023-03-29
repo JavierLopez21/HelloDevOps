@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: external-secrets-controller
+spec:
+  selector:
+    matchLabels:
+      app: external-secrets-controller
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: external-secrets-controller
+    spec:
+      serviceAccountName: external-secrets-controller
+      containers:
+      - name: external-secrets-controller
+        image: ghcr.io/external-secrets/kubernetes-external-secrets:v1.5.2
+        command:
+        - /external-secrets-controller
+        - --log-level=debug
+        - --watch-namespace=default # Set to your desired namespace
+        - --resource=default
+        - --controller=provider
+        - --provider=akeyless
+        - --akeyless-auth-kubernetes-access-id=Flask1
+        - --akeyless-auth-kubernetes-secret-id=12345
+        - --akeyless-auth-kubernetes-role=my-k8s-role
+        - --akeyless-auth-kubernetes-mount-path=my-k8s-mount-path
+        - --akeyless-auth-kubernetes-service-account-name=my-k8s-service-account-name

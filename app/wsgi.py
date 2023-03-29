@@ -3,23 +3,30 @@ import pandas as pd
 import json
 import plotly
 import plotly.express as px
-from credentials import credentials
-
+import hvac
+import os
 
 app = Flask(__name__)
 
 app.app_context().push()
-
-
-
 @app.route('/')
 def notdash():
-   
-   df = pd.read_csv('train.csv')
+
+
+   df = pd.read_csv('/app/train.csv')
    df2 = df[['state','active']].groupby('state').sum().reset_index().rename({'active':'total'},axis=1).sort_values(by='total').iloc[:10,:]
    fig = px.bar(df2, x='state', y='total',color='total',title='Densidad de negocios activos por estado')
    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-   return render_template('notdash.htlm', graphJSON=graphJSON)
+   try:
+      client = hvac.Client(url='http://vault:8200')
+      client.token = 'myroot'
+      secret = 'La conexión fue exitosa'
+   except:
+      secret = 'La conexión falló'
+
    
-if __name__ == '__main__':
-   app.run(host = '0.0.0.0',port=4000,debug=True)
+   return render_template('index.html', graphJSON=graphJSON, line = secret)
+
+   
+if __name__ == "__main__":
+   app.run(debug=True)
