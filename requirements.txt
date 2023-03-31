@@ -1,6 +1,6 @@
 asttokens==2.2.1
 gunicorn
-hvac
+hvac==1.1.0
 backcall==0.2.0
 click==8.1.3
 colorama==0.4.6
