@@ -1,36 +1,26 @@
-# Foobar
+# HelloDevOps: Productivización de dashboard con Plotly en Nginx.
 
-Foobar is a Python library for dealing with word pluralization.
+El propósito de este laboratorio es poder ejemplificar el usu de un ambiente de DevOps para el desarrollo ágil de software. Las fases que comprenden este proyecto son las siguientes:
 
-## Installation
+## Entorno de versionado de código
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+La plataforma utilizada es GitHub, el cual cuenta con los WebHooks necesarios para poder integrarse a la plataforma de compilado y pruebas unitarias.
 
-```bash
-pip install foobar
-```
+## Compilado y pruebas unitarias
 
-## Usage
+La plataforma utilizada es Jenkins.
 
-```python
-import foobar
+## Almacén de imágenes
 
-# returns 'words'
-foobar.pluralize('word')
+La plataforma utilizada es JFrog.
 
-# returns 'geese'
-foobar.pluralize('goose')
+## Despliegue de contenedores
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
+La plataforma usada es Kubernetes.
 
-## Contributing
+## Almacén de información sensible
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+La plataforma usada es Hashicorp Vault.
 
 ## License
 
