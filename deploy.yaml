@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: javis2161/flask-hdo2:hellodevops2-copia-app
+        image: javis2161/flask-hdo3:hellodevops3-app
         command: ["gunicorn", "--bind", "0.0.0.0:8000", "app.wsgi:app"]
         ports:
         - name: http
@@ -209,77 +209,44 @@ spec:
         - name: vault-data
           emptyDir: {}
 ---
+
 apiVersion: v1
 kind: Pod
 metadata:
-  name: vault
+  name: artifactory-pod
 spec:
   containers:
-  - name: vault
-    image: vault
+  - name: artifactory
+    image: releases-docker.jfrog.io/jfrog/artifactory-pro:latest
     ports:
-    - containerPort: 8200
-    env:
-    - name: VAULT_DEV_ROOT_TOKEN_ID
-      value: root
-    command:
-    - "server"
-    - "-dev"
-    - "-dev-root-token-id=root"
-    - "-dev-listen-address=0.0.0.0:8200"
+      - containerPort: 8081
+      - containerPort: 8082
     volumeMounts:
-    - name: vault-storage
-      mountPath: /vault
-  - name: init
-    image: vault
-    env:
-    - name: VAULT_ADDR
-      value: http://vault:8200
-    command:
-    - "vault"
-    - "operator"
-    - "init"
-    - "-key-shares=1"
-    - "-key-threshold=1"
-    - "-format=json"
-    volumeMounts:
-    - name: vault-storage
-      mountPath: /vault
-  - name: unseal
-    image: vault
-    env:
-    - name: VAULT_ADDR
-      value: http://vault:8200
-    - name: VAULT_TOKEN
-      value: "${VAULT_TOKEN}"
-    command:
-    - "sh"
-    - "-c"
-    - "cat /vault/init-output.json | jq -r '.unseal_keys_b64[]' | xargs -I {} vault operator unseal {}"
-    volumeMounts:
-    - name: vault-storage
-      mountPath: /vault
-  - name: create-secret
-    image: vault
-    env:
-    - name: VAULT_ADDR
-      value: http://vault:8200
-    - name: VAULT_TOKEN
-      value: "${VAULT_TOKEN}"
-    command:
-    - "vault"
-    - "kv"
-    - "put"
-    - "secret/hello"
-    - "username=myuser"
-    - "password=mypassword"
-    volumeMounts:
-    - name: vault-storage
-      mountPath: /vault
+      - name: artifactory-data
+        mountPath: /var/opt/jfrog/artifactory
   volumes:
-  - name: vault-storage
+  - name: artifactory-data
     emptyDir: {}
-
 ---
-
+apiVersion: v1
+kind: Pod
+metadata:
+  name: create-secret
+spec:
+  containers:
+    - name: create-secret
+      image: vault
+      command: ["vault"]
+      args: ["kv", "put", "secret/myapp/config", "username=myuser", "password=mypassword"]
+      env:
+        - name: VAULT_ADDR
+          value: "http://vault:8200"
+        - name: VAULT_TOKEN
+          value: "root"
+      securityContext:
+        capabilities:
+          add:
+            - IPC_LOCK
+  networks:
+    - name: my-network
 

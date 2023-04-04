@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: my-jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment:
+      - JENKINS_ADMIN_ID=admin
+      - JENKINS_ADMIN_PASSWORD=password
+      - JENKINS_PLUGINS=git:latest docker-workflow:latest blueocean:latest
+    volumes:
+      - jenkins_home:/var/jenkins_home
+  
   app:
     build:
       context: ./
@@ -10,14 +24,14 @@ services:
     ports:
       - "8000"
     environment:
-      - VAULT_ADDR=http://vault:8200  
+      - VAULT_ADDR=http://vault:8200
     depends_on:
       - vault
     networks:
       my-network:
         aliases:
           - flask-app
-          
+
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -30,6 +44,7 @@ services:
     networks:
       my-network:
 
+
   vault:
     image: vault
     container_name: vault
@@ -37,12 +52,20 @@ services:
       - "8200:8200"
     environment:
       VAULT_DEV_ROOT_TOKEN_ID: "root"
-    command: ["server", "-dev", "-dev-root-token-id=root", "-dev-listen-address=0.0.0.0:8200", "-config=/vault/config/vault.hcl"]
+    command:
+      [
+        "server",
+        "-dev",
+        "-dev-root-token-id=root",
+        "-dev-listen-address=0.0.0.0:8200",
+        "-config=/vault/config/vault.hcl"
+      ]
     restart: always
     volumes:
       - ./vault:/vault
     networks:
       my-network:
+
 
   create-secret:
     image: vault
@@ -57,8 +80,19 @@ services:
       my-network:
     cap_add:
       - IPC_LOCK
-    
 
-  
+  artifactory:
+    image: releases-docker.jfrog.io/jfrog/artifactory-pro:latest
+    container_name: artifactory
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    volumes:
+      - artifactory-data:/var/opt/jfrog/artifactory
+
+volumes:
+  jenkins_home:
+  artifactory-data:
+
 networks:
   my-network:
