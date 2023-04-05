@@ -1,0 +1,29 @@
+Started by user [8mha:////4AQqCcen0/TavNtU3Wktnx4DAOIiw3NMGoVEyg16vAREAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/arti-flask
+The recommended git tool is: NONE
+using credential 469582d2-021e-414d-97ab-8ee039e2760f
+Cloning the remote Git repository
+Cloning repository https://github.com/JavierLopez21/HelloDevOps
+ > git init /var/jenkins_home/workspace/arti-flask # timeout=10
+Fetching upstream changes from https://github.com/JavierLopez21/HelloDevOps
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/JavierLopez21/HelloDevOps +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/JavierLopez21/HelloDevOps # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision f70c9413eb9eaa3cfdbdc4ab52d570545772ce39 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f70c9413eb9eaa3cfdbdc4ab52d570545772ce39 # timeout=10
+Commit message: "Merge branch 'main' of https://github.com/JavierLopez21/HelloDevOps"
+ > git rev-list --no-walk f70c9413eb9eaa3cfdbdc4ab52d570545772ce39 # timeout=10
+Jenkins Artifactory Plugin version: 3.18.0
+$ docker-compose -f /var/jenkins_home/workspace/arti-flask/docker-compose.yml up -d
+Build step 'Docker Compose Build Step' changed build result to FAILURE
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] done
+Finished: FAILURE

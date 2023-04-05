@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: JFrog Plugin
+Specification-Version: 1.3
+Implementation-Title: JFrog Plugin
+Implementation-Version: 1.3.0
+Group-Id: io.jenkins.plugins
+Short-Name: jfrog
+Long-Name: JFrog Plugin
+Plugin-Version: 1.3.0
+Hudson-Version: 2.361
+Jenkins-Version: 2.361
+Plugin-Dependencies: commons-lang3-api:3.12.0-36.vd97de6465d5b_,workflow
+ -cps:2803.v1a_f77ffcc773,workflow-job:1207.ve6191ff089f8,workflow-step-
+ api:639.v6eca_cd8c04a_a_,apache-httpcomponents-client-4-api:4.5.13-138.
+ v4e7d9a_7b_a_e61,credentials:1143.vb_e8b_b_ceee347,git:4.11.5,jackson2-
+ api:2.13.4.20221013-295.v8e29ea_354141,plain-credentials:139.ved2b_9cf7
+ 587b,pipeline-model-definition:2.2118.v31fd5b_9944b_5
+Plugin-Developers: 
+Plugin-License-Name: The Apache Software License, Version 2.0
+Plugin-License-Url: https://www.apache.org/licenses/LICENSE-2.0.txt
+Plugin-ScmUrl: https://github.com/jenkinsci/plugin-pom/jfrog
+

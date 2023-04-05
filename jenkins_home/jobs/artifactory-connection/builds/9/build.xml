@@ -1,0 +1,73 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@1289.vd1c337fd5354">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="pipeline-groovy-lib@629.vb_5627b_ee2104">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>9</queueId>
+  <timestamp>1680633054253</timestamp>
+  <startTime>1680633054261</startTime>
+  <result>FAILURE</result>
+  <duration>139</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>rtServer (
+    id: &apos;Artifactory-1&apos;,
+    url: &apos;http://localhost:8082/artifactory/&apos;,
+        // If you&apos;re using username and password:
+    username: &apos;admin&apos;,
+    password: &apos;Jaden216#&apos;,
+        // If you&apos;re using Credentials ID:
+        //credentialsId: &apos;ccrreeddeennttiiaall&apos;,
+        // If Jenkins is configured to use an http proxy, you can bypass the proxy when using this Artifactory server:
+        bypassProxy: true,
+        // Configure the connection timeout (in seconds).
+        // The default value (if not configured) is 300 seconds: 
+        timeout: 300
+)</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="concurrent-hash-map">
+      <entry>
+        <string>flowNode</string>
+        <long>45079040</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>27165962</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>76815624</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>32790837</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>7241478</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>4</iota>
+    <head>1:4</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

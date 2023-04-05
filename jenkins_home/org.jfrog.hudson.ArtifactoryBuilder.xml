@@ -1,0 +1,44 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jfrog.hudson.ArtifactoryBuilder_-DescriptorImpl plugin="artifactory@3.18.0">
+  <useCredentialsPlugin>false</useCredentialsPlugin>
+  <jfrogInstances>
+    <org.jfrog.hudson.JFrogPlatformInstance>
+      <url>http://172.23.0.3:8082</url>
+      <distributionUrl>http://172.23.0.3:8082/distribution</distributionUrl>
+      <id>artifactory-flask</id>
+      <artifactoryServer>
+        <url>http://172.23.0.3:8082/artifactory</url>
+        <id>artifactory-flask</id>
+        <timeout>300</timeout>
+        <bypassProxy>false</bypassProxy>
+        <connectionRetry>3</connectionRetry>
+        <deploymentThreads>3</deploymentThreads>
+        <deployerCredentialsConfig>
+          <username>{AQAAABAAAAAQgwI0LQS5DZVSmjQlLAjDSnc84ZN/+fxgS1PQkkdkHLg=}</username>
+          <password>{AQAAABAAAAAQzwo59ZsGSV1buApXt5Vx9g2gdsswzMrrX+hSxqg+c6o=}</password>
+          <credentialsId></credentialsId>
+          <overridingCredentials>false</overridingCredentials>
+          <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
+        </deployerCredentialsConfig>
+      </artifactoryServer>
+      <deployerCredentialsConfig reference="../artifactoryServer/deployerCredentialsConfig"/>
+      <bypassProxy>false</bypassProxy>
+      <timeout>300</timeout>
+      <connectionRetry>3</connectionRetry>
+      <deploymentThreads>3</deploymentThreads>
+    </org.jfrog.hudson.JFrogPlatformInstance>
+  </jfrogInstances>
+  <jfrogPipelinesServer>
+    <credentialsConfig>
+      <username>{AQAAABAAAAAQotj+CjK9bXZ88xDgWKyzYdGedxKhuVm2ciErgL+VFos=}</username>
+      <password>{AQAAABAAAAAQYU62ZECHf69ra3sGFsZKx1zsZTjJHsFO2ZMBsQr/uTI=}</password>
+      <credentialsId></credentialsId>
+      <overridingCredentials>false</overridingCredentials>
+      <ignoreCredentialPluginDisabled>true</ignoreCredentialPluginDisabled>
+    </credentialsConfig>
+    <connectionRetries>3</connectionRetries>
+    <integrationUrl></integrationUrl>
+    <bypassProxy>false</bypassProxy>
+    <timeout>300</timeout>
+  </jfrogPipelinesServer>
+</org.jfrog.hudson.ArtifactoryBuilder_-DescriptorImpl>

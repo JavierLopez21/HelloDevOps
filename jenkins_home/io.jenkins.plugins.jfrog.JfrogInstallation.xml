@@ -1,0 +1,4 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<io.jenkins.plugins.jfrog.JfrogInstallation_-DescriptorImpl plugin="jfrog@1.3.0">
+  <installations class="io.jenkins.plugins.jfrog.JfrogInstallation-array"/>
+</io.jenkins.plugins.jfrog.JfrogInstallation_-DescriptorImpl>

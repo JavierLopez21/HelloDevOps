@@ -1,0 +1,5 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<io.jenkins.plugins.jfrog.configuration.JFrogPlatformBuilder_-DescriptorImpl plugin="jfrog@1.3.0">
+  <jfrogInstances/>
+  <allowHttpConnections>true</allowHttpConnections>
+</io.jenkins.plugins.jfrog.configuration.JFrogPlatformBuilder_-DescriptorImpl>

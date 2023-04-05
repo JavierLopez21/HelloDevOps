@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1289.vd1c337fd5354">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@3653.v07ea_433c90b_4">
+    <script>rtServer (
+    id: &apos;Artifactory-1&apos;,
+    url: &apos;http://localhost:8082/artifactory/&apos;,
+        // If you&apos;re using username and password:
+    username: &apos;admin&apos;,
+    password: &apos;Jaden216#&apos;,
+        // If you&apos;re using Credentials ID:
+        //credentialsId: &apos;ccrreeddeennttiiaall&apos;,
+        // If Jenkins is configured to use an http proxy, you can bypass the proxy when using this Artifactory server:
+        bypassProxy: true,
+        // Configure the connection timeout (in seconds).
+        // The default value (if not configured) is 300 seconds: 
+        timeout: 300
+)</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
