@@ -97,6 +97,6 @@ services:
 volumes:
   jenkins_home:
   artifactory-data:
-# Red de la app
+# Red de la app ggg
 networks:
   my-network:
