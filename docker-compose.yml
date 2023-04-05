@@ -93,6 +93,7 @@ services:
     volumes:
       - artifactory-data:/var/opt/jfrog/artifactory
 
+# Volúmenes para el entorno
 volumes:
   jenkins_home:
   artifactory-data:
