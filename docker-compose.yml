@@ -97,6 +97,6 @@ services:
 volumes:
   jenkins_home:
   artifactory-data:
-
+# Red 
 networks:
   my-network:
