@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-
+# Creación de entorno de Jenkins con todas las características necesarias en la carpeta /jenkins_home
   jenkins:
     image: jenkins/jenkins:lts
     container_name: my-jenkins
@@ -13,8 +13,9 @@ services:
       - JENKINS_ADMIN_PASSWORD=password
       - JENKINS_PLUGINS=git:latest docker-workflow:latest blueocean:latest
     volumes:
-      - jenkins_home:/var/jenkins_home
-  
+      - ./jenkins_home:/var/jenkins_home
+
+# Creación de la aplicación de flask
   app:
     build:
       context: ./
@@ -32,6 +33,7 @@ services:
         aliases:
           - flask-app
 
+#Creación del servidor productivo de nginx
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -44,7 +46,7 @@ services:
     networks:
       my-network:
 
-
+# Creación de Hashicorp Vault para manejo de información sensible
   vault:
     image: vault
     container_name: vault
@@ -66,7 +68,7 @@ services:
     networks:
       my-network:
 
-
+# Creación de un secreto de prueba para nuestro entorno
   create-secret:
     image: vault
     container_name: create-secret
@@ -81,8 +83,9 @@ services:
     cap_add:
       - IPC_LOCK
 
+#  Creación de nuestro repositorio de imágenes JFrog-Artifactory
   artifactory:
-    image: releases-docker.jfrog.io/jfrog/artifactory-pro:latest
+    image: docker.bintray.io/jfrog/artifactory-oss:latest
     container_name: artifactory
     ports:
       - "8081:8081"
