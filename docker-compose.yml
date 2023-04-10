@@ -15,6 +15,9 @@ services:
     volumes:
       - ./jenkins_home:/var/jenkins_home
 
+    networks:
+      - ngrok
+
 
 # Creación de la aplicación de flask
   app:
@@ -93,6 +96,17 @@ services:
       - "8082:8082"
     volumes:
       - artifactory-data:/var/opt/jfrog/artifactory
+  
+  ngrok:
+    image: wernight/ngrok:latest
+    container_name: ngrok
+    command: ngrok http jenkins:8080
+    ports:
+      - "4040:4040"
+    networks:
+      - ngrok
+    volumes:
+      - ./ngrok/ngrok.yml:/home/ngrok/.ngrok2/ngrok.yml
 
 # Volúmenes para el entorno
 volumes:
@@ -101,3 +115,6 @@ volumes:
 # Red de la app ggg 1111123 ya ni se
 networks:
   my-network:
+
+  ngrok:
+    driver: bridge
