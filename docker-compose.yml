@@ -49,7 +49,7 @@ services:
         aliases:
           - flask-app
 
-#Creación del servidor productivo de nginx
+#Creación del servidor productivo de nginx jojo
   nginx:
     image: nginx:latest
     container_name: nginx
