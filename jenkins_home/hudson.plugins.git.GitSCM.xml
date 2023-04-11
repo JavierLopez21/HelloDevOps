@@ -8,5 +8,5 @@
   <hideCredentials>false</hideCredentials>
   <allowSecondFetch>false</allowSecondFetch>
   <disableGitToolChooser>false</disableGitToolChooser>
-  <addGitTagAction>false</addGitTagAction>
+  <addGitTagAction>true</addGitTagAction>
 </hudson.plugins.git.GitSCM_-DescriptorImpl>

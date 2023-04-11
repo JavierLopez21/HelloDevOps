@@ -1,0 +1,20 @@
+commit 4d8c299f5a3492048e3a7fb2cf09e9fbc8d9a58b
+tree a7bd77493d55b59ad01dab730260d7951da899f9
+parent 7cb29d8d21290c20fc9c09cb07cf741bcbda7ad3
+author JavierLopez21 <44420416+JavierLopez21@users.noreply.github.com> 2023-04-10 13:41:45 -0600
+committer JavierLopez21 <44420416+JavierLopez21@users.noreply.github.com> 2023-04-10 13:41:45 -0600
+
+    ora si
+
+
+:100644 100644 e799f21d399e5a646efe861759a3cd81e8420413 e2a29e56cb1227692199050e4d0d888357c25b01 M	docker-compose.yml
+commit 7cb29d8d21290c20fc9c09cb07cf741bcbda7ad3
+tree b04000ff4987e3ba8db1781b02e2b4f63288359f
+parent 2c0e5012c316e0267a7962d47fb0333cf893a1b3
+author JavierLopez21 <44420416+JavierLopez21@users.noreply.github.com> 2023-04-10 10:01:21 -0600
+committer JavierLopez21 <44420416+JavierLopez21@users.noreply.github.com> 2023-04-10 10:01:21 -0600
+
+    Jeje
+
+
+:100644 100644 7735f3866c7371c38d6f6facea1e4bb10606d978 e799f21d399e5a646efe861759a3cd81e8420413 M	docker-compose.yml

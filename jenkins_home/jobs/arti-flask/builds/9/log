@@ -1,0 +1,25 @@
+Started by user [8mha:////4AQqCcen0/TavNtU3Wktnx4DAOIiw3NMGoVEyg16vAREAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/arti-flask
+The recommended git tool is: NONE
+using credential 469582d2-021e-414d-97ab-8ee039e2760f
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/arti-flask/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/JavierLopez21/HelloDevOps # timeout=10
+Fetching upstream changes from https://github.com/JavierLopez21/HelloDevOps
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/JavierLopez21/HelloDevOps +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 4d8c299f5a3492048e3a7fb2cf09e9fbc8d9a58b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4d8c299f5a3492048e3a7fb2cf09e9fbc8d9a58b # timeout=10
+Commit message: "ora si"
+ > git rev-list --no-walk 4d8c299f5a3492048e3a7fb2cf09e9fbc8d9a58b # timeout=10
+[arti-flask] $ /bin/sh -xe /tmp/jenkins8440336852920165698.sh
++ echo Listo
+Listo
+[Set GitHub commit status (universal)] PENDING on repos [GHRepository@7d53a1e7[archived=false,commits={},compareUsePaginatedCommits=false,description=<null>,fork=false,homepage=<null>,isTemplate=false,language=JavaScript,license=<null>,milestones={},name=HelloDevOps,nodeId=R_kgDOJGHhQA,parent=<null>,size=396140,source=<null>,visibility=public,createdAt=2023-03-06T17:26:39Z,id=610394432,nodeId=<null>,updatedAt=2023-04-04T00:30:28Z,url=https://api.github.com/repos/JavierLopez21/HelloDevOps]] (sha:4d8c299) with context:arti-flask
+Setting commit status on GitHub for https://github.com/JavierLopez21/HelloDevOps/commit/4d8c299f5a3492048e3a7fb2cf09e9fbc8d9a58b
+Finished: SUCCESS

@@ -3,26 +3,26 @@
   <useCredentialsPlugin>false</useCredentialsPlugin>
   <jfrogInstances>
     <org.jfrog.hudson.JFrogPlatformInstance>
-      <url>http://172.23.0.3:8082</url>
-      <distributionUrl>http://172.23.0.3:8082/distribution</distributionUrl>
+      <url>http://172.23.0.2:8082</url>
+      <distributionUrl>http://172.23.0.2:8082/distribution</distributionUrl>
       <id>artifactory-flask</id>
       <artifactoryServer>
-        <url>http://172.23.0.3:8082/artifactory</url>
+        <url>http://172.23.0.2:8082/artifactory</url>
         <id>artifactory-flask</id>
         <timeout>300</timeout>
-        <bypassProxy>false</bypassProxy>
+        <bypassProxy>true</bypassProxy>
         <connectionRetry>3</connectionRetry>
         <deploymentThreads>3</deploymentThreads>
         <deployerCredentialsConfig>
-          <username>{AQAAABAAAAAQgwI0LQS5DZVSmjQlLAjDSnc84ZN/+fxgS1PQkkdkHLg=}</username>
-          <password>{AQAAABAAAAAQzwo59ZsGSV1buApXt5Vx9g2gdsswzMrrX+hSxqg+c6o=}</password>
+          <username>{AQAAABAAAAAQkW4dZfvc2D78YEK2O83FfivTfvjwIJFwsNo8gXeEu2I=}</username>
+          <password>{AQAAABAAAAAQZdY5ZndrEyB7u2wLeZ/2GbWDLHRO0IwkxCmdif5Nwmc=}</password>
           <credentialsId></credentialsId>
           <overridingCredentials>false</overridingCredentials>
           <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
         </deployerCredentialsConfig>
       </artifactoryServer>
       <deployerCredentialsConfig reference="../artifactoryServer/deployerCredentialsConfig"/>
-      <bypassProxy>false</bypassProxy>
+      <bypassProxy>true</bypassProxy>
       <timeout>300</timeout>
       <connectionRetry>3</connectionRetry>
       <deploymentThreads>3</deploymentThreads>
@@ -30,8 +30,8 @@
   </jfrogInstances>
   <jfrogPipelinesServer>
     <credentialsConfig>
-      <username>{AQAAABAAAAAQotj+CjK9bXZ88xDgWKyzYdGedxKhuVm2ciErgL+VFos=}</username>
-      <password>{AQAAABAAAAAQYU62ZECHf69ra3sGFsZKx1zsZTjJHsFO2ZMBsQr/uTI=}</password>
+      <username>{AQAAABAAAAAQZNy9mEynzLhrDPAN5D9n11EMoSora+cLKxfbhPQAVm8=}</username>
+      <password>{AQAAABAAAAAQ0OIIg4vpJ5Lq7RLX4SCO1WyMLDI9ub4j+stIU4pGwVo=}</password>
       <credentialsId></credentialsId>
       <overridingCredentials>false</overridingCredentials>
       <ignoreCredentialPluginDisabled>true</ignoreCredentialPluginDisabled>

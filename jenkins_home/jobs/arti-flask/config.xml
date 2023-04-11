@@ -31,83 +31,26 @@
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers>
-    <org.jfrog.hudson.trigger.ArtifactoryTrigger plugin="artifactory@3.18.0">
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.37.0">
       <spec></spec>
-      <lastModified>1680646838773</lastModified>
-      <details>
-        <artifactoryName>artifactory-flask</artifactoryName>
-        <stagingPlugin/>
-      </details>
-      <branches></branches>
-      <paths></paths>
-    </org.jfrog.hudson.trigger.ArtifactoryTrigger>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <jenkins.plugins.docker__compose.DockerComposeBuilder plugin="docker-compose-build-step@1.0">
-      <useCustomDockerComposeFile>true</useCustomDockerComposeFile>
-      <dockerComposeFile>docker-compose.yml</dockerComposeFile>
-      <option class="jenkins.plugins.docker_compose.StartAllServices"/>
-    </jenkins.plugins.docker__compose.DockerComposeBuilder>
+    <hudson.tasks.Shell>
+      <command>echo &apos;Listo&apos;</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <hudson.plugins.ws__cleanup.WsCleanup plugin="ws-cleanup@0.44">
-      <patterns class="empty-list"/>
-      <deleteDirs>false</deleteDirs>
-      <skipWhenFailed>false</skipWhenFailed>
-      <cleanWhenSuccess>true</cleanWhenSuccess>
-      <cleanWhenUnstable>true</cleanWhenUnstable>
-      <cleanWhenFailure>true</cleanWhenFailure>
-      <cleanWhenNotBuilt>true</cleanWhenNotBuilt>
-      <cleanWhenAborted>true</cleanWhenAborted>
-      <notFailBuild>false</notFailBuild>
-      <cleanupMatrixParent>false</cleanupMatrixParent>
-      <externalDelete></externalDelete>
-      <disableDeferredWipeout>false</disableDeferredWipeout>
-    </hudson.plugins.ws__cleanup.WsCleanup>
+    <org.jenkinsci.plugins.github.status.GitHubCommitStatusSetter plugin="github@1.37.0">
+      <commitShaSource class="org.jenkinsci.plugins.github.status.sources.BuildDataRevisionShaSource"/>
+      <reposSource class="org.jenkinsci.plugins.github.status.sources.AnyDefinedRepositorySource"/>
+      <contextSource class="org.jenkinsci.plugins.github.status.sources.DefaultCommitContextSource"/>
+      <statusResultSource class="org.jenkinsci.plugins.github.status.sources.ConditionalStatusResultSource"/>
+      <statusBackrefSource class="org.jenkinsci.plugins.github.status.sources.BuildRefBackrefSource"/>
+      <errorHandlers/>
+    </org.jenkinsci.plugins.github.status.GitHubCommitStatusSetter>
   </publishers>
-  <buildWrappers>
-    <org.jfrog.hudson.generic.ArtifactoryGenericConfigurator plugin="artifactory@3.18.0">
-      <specsDeployerDetails>
-        <artifactoryName>artifactory-flask</artifactoryName>
-        <artifactoryUrl>http://172.23.0.3:8082/artifactory</artifactoryUrl>
-        <stagingPlugin/>
-      </specsDeployerDetails>
-      <specsResolverDetails>
-        <artifactoryName>artifactory-flask</artifactoryName>
-        <artifactoryUrl>http://172.23.0.3:8082/artifactory</artifactoryUrl>
-        <stagingPlugin/>
-      </specsResolverDetails>
-      <deployerCredentialsConfig>
-        <credentialsId></credentialsId>
-        <overridingCredentials>false</overridingCredentials>
-        <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
-      </deployerCredentialsConfig>
-      <resolverCredentialsConfig>
-        <credentialsId></credentialsId>
-        <overridingCredentials>false</overridingCredentials>
-        <ignoreCredentialPluginDisabled>false</ignoreCredentialPluginDisabled>
-      </resolverCredentialsConfig>
-      <uploadSpec>
-        <spec></spec>
-      </uploadSpec>
-      <downloadSpec>
-        <spec></spec>
-      </downloadSpec>
-      <deployBuildInfo>true</deployBuildInfo>
-      <includeEnvVars>false</includeEnvVars>
-      <envVarsPatterns>
-        <includePatterns></includePatterns>
-        <excludePatterns>*password*,*psw*,*secret*,*key*,*token*</excludePatterns>
-      </envVarsPatterns>
-      <discardOldBuilds>false</discardOldBuilds>
-      <discardBuildArtifacts>true</discardBuildArtifacts>
-      <asyncBuildRetention>false</asyncBuildRetention>
-      <multiConfProject>false</multiConfProject>
-      <customBuildName></customBuildName>
-      <overrideBuildName>false</overrideBuildName>
-      <useSpecs>true</useSpecs>
-      <project></project>
-    </org.jfrog.hudson.generic.ArtifactoryGenericConfigurator>
-  </buildWrappers>
+  <buildWrappers/>
 </project>

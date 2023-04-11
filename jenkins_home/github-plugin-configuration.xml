@@ -1,4 +1,17 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <github-plugin-configuration plugin="github@1.37.0">
-  <configs/>
+  <configs>
+    <github-server-config>
+      <name>git-webh</name>
+      <apiUrl>https://api.github.com</apiUrl>
+      <manageHooks>true</manageHooks>
+      <credentialsId>tok</credentialsId>
+      <clientCacheSize>20</clientCacheSize>
+    </github-server-config>
+  </configs>
+  <hookSecretConfigs>
+    <org.jenkinsci.plugins.github.config.HookSecretConfig>
+      <credentialsId>git-web</credentialsId>
+    </org.jenkinsci.plugins.github.config.HookSecretConfig>
+  </hookSecretConfigs>
 </github-plugin-configuration>
