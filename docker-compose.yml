@@ -5,6 +5,8 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     container_name: my-jenkins
+    expose:
+      - 8080
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -14,11 +16,21 @@ services:
       - JENKINS_PLUGINS=git:latest docker-workflow:latest blueocean:latest
     volumes:
       - ./jenkins_home:/var/jenkins_home
-
     networks:
-      - ngrok
+      my-network:
+      
 
-
+  ngrok:
+    image: wernight/ngrok:latest
+    command: ngrok http jenkins:8080
+    environment:
+      NGROK_AUTH_TOKEN: 2OFRwdLGCvulIof60c9NNahW1v3_3pEifaWv99jP19MFKx9Gh
+    ports:
+      - 4040:4040
+    depends_on:
+      - jenkins
+    networks:
+      my-network:
 # Creación de la aplicación de flask
   app:
     build:
@@ -97,16 +109,6 @@ services:
     volumes:
       - artifactory-data:/var/opt/jfrog/artifactory
   
-  ngrok:
-    image: wernight/ngrok:latest
-    container_name: ngrok
-    command: ngrok http jenkins:8080
-    ports:
-      - "4040:4040"
-    networks:
-      - ngrok
-    volumes:
-      - ./ngrok/ngrok.yml:/home/ngrok/.ngrok2/ngrok.yml
 
 # Volúmenes para el entorno
 volumes:
@@ -116,5 +118,3 @@ volumes:
 networks:
   my-network:
 
-  ngrok:
-    driver: bridge
