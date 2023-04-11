@@ -1,6 +1,6 @@
 # HelloDevOps: Productivización de dashboard con Plotly en Nginx.
 
-El propósito de este laboratorio es poder ejemplificar el usu de un ambiente de DevOps para el desarrollo ágil de software. Las fases que comprenden este proyecto son las siguientes:
+El propósito de este laboratorio es poder ejemplificar el usu de un ambiente de DevOps para el desarrollo de software, se tiene que considerar que los recursos que necesita el proyecto son grandes. Las fases que comprenden este proyecto son las siguientes:
 
 ## Entorno de versionado de código
 
