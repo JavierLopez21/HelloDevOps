@@ -15,6 +15,7 @@ La plataforma utilizada es Jenkins, éste paso fue construido a partir de un Web
 <li>Credenciales: Para la correcta integración del Webhook con la plataforma de jenkins se nececitan; un token generado por la palaforma de Jenkins para habiiltar el uso correcto de la API, el token generado para hacer uso de la API de GitHub con los permisos necesarios para que el Webhook se pueda ejecutar correctamente.</li>
 </ul>
 <b>NOTA</b>: Los URLs generados por Ngrok son validos hasta por 8 horas, por lo que cada sesión en la cual se desee ejecutar este entorno de DevOps será necesario actualizar dicho URL en las configuraciones de Jenkins y del Webhook.
+
 ## Almacén de imágenes
 
 La plataforma utilizada es JFrog. Para su correcta automatización solo se requiere de las credenciales con las cuales se puede ingresar al contenedor de JFrog, de tal forma que al ejecutarse el proyecto construido en Jenkins las imágenes involucradas puedan guardarse de manera correcta.
