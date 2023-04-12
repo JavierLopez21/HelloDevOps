@@ -23,8 +23,8 @@ services:
   ngrok:
     image: wernight/ngrok:latest
     command: ngrok http jenkins:8080
-    environment:
-      NGROK_AUTH_TOKEN: 2OFRwdLGCvulIof60c9NNahW1v3_3pEifaWv99jP19MFKx9Gh
+    volumes:
+      - ./ngrok/ngrok.yml:/home/ngrok/.ngrok2/ngrok.yml
     ports:
       - 4040:4040
     depends_on:
