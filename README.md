@@ -13,6 +13,7 @@ La plataforma utilizada es Jenkins, éste paso fue construido a partir de un Web
 <ul style="list-style-type:circle">
 <li>Configuración Ngrok: Aquí se requiere apuntar de manera correcta el puerto en el cual se ejecuta el contenedor de Jenkins dentro de la máquina local, de tal forma que el URL que se genere pueda apuntar correctamente al servidor de Jenkins. La plataforma requiere de un token de autenticación de usuario que se puede generar a partir de la plataforma de Ngrok creando una cuenta gratuita.</li>
 <li>Credenciales: Para la correcta integración del Webhook con la plataforma de jenkins se nececitan; un token generado por la palaforma de Jenkins para habiiltar el uso correcto de la API, el token generado para hacer uso de la API de GitHub con los permisos necesarios para que el Webhook se pueda ejecutar correctamente.</li>
+<li>Automatización de ejecución de Jobs: Es posible configurar con un archivo yml la estructura de un job de Jenkins a través del plugin "Job DSL"</li>
 </ul>
 <b>NOTA</b>: Los URLs generados por Ngrok son validos hasta por 8 horas, por lo que cada sesión en la cual se desee ejecutar este entorno de DevOps será necesario actualizar dicho URL en las configuraciones de Jenkins y del Webhook. jjjjjjj
 
@@ -27,7 +28,3 @@ La plataforma usada es Kubernetes.
 ## Almacén de información sensible
 
 La plataforma usada es Hashicorp Vault.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
